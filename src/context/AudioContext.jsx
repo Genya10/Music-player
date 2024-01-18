@@ -26,8 +26,9 @@ export const AudioProvider = ({children})=>{
         setPlaying(true);
       }
     }
-    const value = {currentTrack,isPlaying,toggleAudio};
+    const value = {audio,currentTrack,isPlaying,toggleAudio};
     return <AudioContext.Provider value={value}>
               {children}
            </AudioContext.Provider>
 }
+
