@@ -1,7 +1,7 @@
 import { useState } from "react";
 import tracks from "../../assets/tracks";
 import style from "./MainPage.module.scss";
-import Track from "../../components/Track/Track";
+import {Track} from "../../components/Track/Track";
 import { Input } from "@mui/material";
 
 const search = (query)=>{
@@ -15,7 +15,7 @@ const search = (query)=>{
       track.artists.toLowerCase().includes(lowerCaseQuery)) 
 }  
 
-const MainPage =()=>{
+ export const MainPage =()=>{
     const [trackSearch,setTrackSearch] = useState(tracks);
 
     const handleChange=(event)=>{
@@ -39,4 +39,4 @@ const MainPage =()=>{
     )
 }
 
-export default MainPage;
+ 

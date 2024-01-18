@@ -5,7 +5,7 @@ const audio = new Audio();
 
 export const AudioContext = createContext({});
 
-const AudioProvider = ({children})=>{
+export const AudioProvider = ({children})=>{
     const [currentTrack,setCurrentTrack] = useState(tracks[0]);
     const [isPlaying,setPlaying] = useState(false);
 
@@ -31,5 +31,3 @@ const AudioProvider = ({children})=>{
               {children}
            </AudioContext.Provider>
 }
-
-export default AudioProvider;
