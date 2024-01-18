@@ -12,6 +12,11 @@ export const PlayFooter =()=>{
   const formatToMin = formattingTime(duration);
   const formatCurrentTime = formattingTime(currentTime);
   const sliderCurrentTime = Math.round((currentTime / duration) * 100);
+  const changeCurrentTime=(_,value)=>{
+    const time = Math.round((value / 100 * duration));
+    setCurrentTime(time);
+    audio.currentTime = time;
+  }
 
   useEffect(()=>{
     const timeInterval = setInterval(()=>{
@@ -30,7 +35,8 @@ export const PlayFooter =()=>{
            </div>
            <div className={style.slider}>
              <p>{formatCurrentTime}</p>
-             <Slider step={1} min={0} max={100} value={sliderCurrentTime}/>
+             <Slider step={1} min={0} max={100} 
+                    value={sliderCurrentTime} onChange={changeCurrentTime}/>
              <p>{formatToMin}</p>
            </div>
         </div>;
