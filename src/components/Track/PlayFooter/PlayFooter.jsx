@@ -20,7 +20,7 @@ const TimeControl =()=>{
     const timeInterval = setInterval(()=>{
         setCurrentTime(audio.currentTime);
     },1000);
-    return clearInterval(timeInterval);
+    //return clearInterval(timeInterval);
   },[]);
    console.log("TimeControl")
  return  (  
