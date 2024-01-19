@@ -5,24 +5,39 @@ import { Slider,IconButton } from "@mui/material";
 import { Pause,PlayArrow } from "@mui/icons-material";
 import formattingTime from "../../../utils/formattingTime";
 
-export const PlayFooter =()=>{
-  const [currentTime,setCurrentTime] = useState(0);
-  const {audio, currentTrack, toggleAudio,isPlaying} = useContext(AudioContext);
-  const {title,artists,preview, duration} = currentTrack;
-  const formatToMin = formattingTime(duration);
-  const formatCurrentTime = formattingTime(currentTime);
-  const sliderCurrentTime = Math.round((currentTime / duration) * 100);
-  const changeCurrentTime=(_,value)=>{
-    const time = Math.round((value / 100 * duration));
-    setCurrentTime(time);
-    audio.currentTime = time;
-  }
-
-  useEffect(()=>{
+const TimeControl =()=>{
+    const {audio,currentTrack} = useContext(AudioContext);
+    const {duration} = currentTrack;
+    const [currentTime,setCurrentTime] = useState(0);
+    const formatCurrentTime = formattingTime(currentTime);
+    const sliderCurrentTime = Math.round((currentTime / duration) * 100);
+    const changeCurrentTime=(_,value)=>{
+        const time = Math.round((value / 100 * duration));
+        setCurrentTime(time);
+        audio.currentTime = time;
+    }
+      useEffect(()=>{
     const timeInterval = setInterval(()=>{
         setCurrentTime(audio.currentTime);
     },1000);
+    return clearInterval(timeInterval);
   },[]);
+   console.log("TimeControl")
+ return  (  
+    <>
+      <p>{formatCurrentTime}</p>
+      <Slider 
+         step={1} min={0} max={100} 
+         value={sliderCurrentTime} 
+         onChange={changeCurrentTime}/>
+    </>);
+}
+
+export const PlayFooter =()=>{  
+    const {currentTrack, toggleAudio,isPlaying} = useContext(AudioContext); 
+    const {title,artists,preview, duration} = currentTrack;    
+    const formatToMin = formattingTime(duration);
+    console.log('PlayFooter')
 
   return <div className={style.playfooter}>
            <img className={style.preview} src={preview} alt=""/>
@@ -34,9 +49,7 @@ export const PlayFooter =()=>{
              <b>{artists}</b>
            </div>
            <div className={style.slider}>
-             <p>{formatCurrentTime}</p>
-             <Slider step={1} min={0} max={100} 
-                    value={sliderCurrentTime} onChange={changeCurrentTime}/>
+            <TimeControl/>
              <p>{formatToMin}</p>
            </div>
         </div>;
