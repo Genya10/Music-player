@@ -19,10 +19,10 @@ const TimeControl =()=>{
       useEffect(()=>{
     const timeInterval = setInterval(()=>{
         setCurrentTime(audio.currentTime);
-    },1000);
-    //return clearInterval(timeInterval);
-  },[]);
-   console.log("TimeControl")
+    }, 1000);
+    //return clearInterval(timeInterval);   
+  }, []);
+
  return  (  
     <>
       <p>{formatCurrentTime}</p>
@@ -37,7 +37,6 @@ export const PlayFooter =()=>{
     const {currentTrack, toggleAudio,isPlaying} = useContext(AudioContext); 
     const {title,artists,preview, duration} = currentTrack;    
     const formatToMin = formattingTime(duration);
-    console.log('PlayFooter')
 
   return <div className={style.playfooter}>
            <img className={style.preview} src={preview} alt=""/>

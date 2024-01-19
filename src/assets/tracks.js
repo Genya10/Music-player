@@ -37,7 +37,7 @@ export default [
     },
     {
       id: 5,
-      src:"https://cdn3.sefon.pro/prev/RDq-Ux-FNdvcQ9pu9Hqafg/1705695792/514/%D0%9C%D0%B0%D0%BA%D1%81%20%D0%91%D0%B0%D1%80%D1%81%D0%BA%D0%B8%D1%85%20-%20%D0%9D%D0%BE%D0%B2%D0%B5%20%D0%96%D0%B8%D1%82%D1%82%D1%8F%20%28MiKey%20Remix%29%20%28192kbps%29.mp3",
+      src:"https://cdn2.sefon.pro/prev/qMzIjwcr3btzH776UFHZKg/1705701874/294/%D0%A2%D0%B8%D0%BD%D0%B0%20%D0%9A%D0%B0%D1%80%D0%BE%D0%BB%D1%8C%20-%20%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0-%D0%A6%D0%B5%20%D0%A2%D0%B8%20%28192kbps%29.mp3",
       preview:
         "https://ncsmusic.s3.eu-west-1.amazonaws.com/tracks/000/000/885/1000x0/dead-of-night-1609236028-MO9yxOe5HC.jpg",
       duration: 215,

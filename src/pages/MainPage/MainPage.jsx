@@ -24,10 +24,11 @@ const search = (query)=>{
 
     return (
         <div className={style.search}>
-         <Input className={style.input} 
-               placeholder="Search tracks"
-               onChange={handleChange}/>
-              
+           <img className={style.imgFlag} src={"./img-flag/flag-of-ukraine.avif"}/>
+           <Input className={style.input} 
+                placeholder="Шукати трек"
+                onChange={handleChange}/>
+                            
          <div className={style.list}>
           {trackSearch.map((track)=>(
             <div key={track.id}>

@@ -1,5 +1,6 @@
 .search {
     flex: 1;
+    position: relative;
   }
   
   .input {
@@ -25,4 +26,11 @@
     padding: 15px;
     border: 1px solid #eee;
     border-radius: 20px;
+  }
+  .imgFlag{
+    width: 80px;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    border-radius: 5px;
   }
