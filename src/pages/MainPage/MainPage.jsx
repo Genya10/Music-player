@@ -5,7 +5,6 @@ import {Track} from "../../components/Track/Track";
 import { Input } from "@mui/material";
 
 const search = (query)=>{
-    const [classter,useClasster]= useState('');
     if(!query){
         return tracks;
     }
